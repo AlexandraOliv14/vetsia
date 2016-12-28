@@ -1,4 +1,5 @@
 class Mascota < ApplicationRecord
-  belongs_to :Dueno
-  belongs_to :TipoMascota
+  self.table_name = "mascotas"
+  belongs_to :dueno
+  belongs_to :tipoMascota
 end

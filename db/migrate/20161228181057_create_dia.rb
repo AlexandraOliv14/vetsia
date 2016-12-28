@@ -1,6 +1,6 @@
 class CreateDia < ActiveRecord::Migration[5.0]
   def change
-    create_table :dia do |t|
+    create_table :dias do |t|
       t.string :descripcion
 
       t.timestamps
