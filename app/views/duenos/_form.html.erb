@@ -1,0 +1,30 @@
+<%= form_for(@dueno, :html => { :role => "form" }) do |f| %>
+  <% if @dueno.errors.any? %>
+    <div class="alert alert-danger alert-dismissable" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+        <h4><%= pluralize(@dueno.errors.count, "error") %> prohibido guardar este dueño:</h4>
+
+        <ul>
+            <% @dueno.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+        </ul>
+
+      <% end %>
+
+
+      <%= f.label :nombre %>
+      <%= f.text_field :nombre %><br>
+
+
+      <%= f.label :telefono %>
+      <%= f.text_field :telefono %>
+
+      <br>
+      <%= f.label :mail %>
+      <%= f.text_field :mail %>
+<br>
+      <%= f.submit %>
+
+    <% end %>
+

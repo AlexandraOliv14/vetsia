@@ -1,0 +1,29 @@
+<h1>Duenos#index</h1>
+<p>Find me in app/views/duenos/index.html.erb</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Telefono</th>
+            <th >Mail</th>
+            <th>Mostrar</th>
+            <th>Editar</th>
+            <th>Eliminar</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @duenos.each do |dueno| %>
+          <tr>
+              <td><%= dueno.nombre %></td>
+              <td><%= dueno.telefono %></td>
+              <td><%= dueno.mail %><br></td>
+              <td><%= link_to 'Mostrar', dueno %> </td>
+              <td><%= link_to 'Editar',editar_dueno_path(dueno) %></td>
+              <td><%= link_to "Delete", dueno_path(dueno), :confirm => "Are you sure?", :method => :eliminar %>
+              </td>
+          </tr>
+        <% end %>
+    </tbody>
+</table>
+<%= will_paginate @duenos, renderer: BootstrapPagination::Rails %>
