@@ -1,13 +1,13 @@
 Rails.application.routes.draw do
   
-  get 'tipo_mascota/', to: 'tipo_mascota#index', as: 'tipo_mascota'
-  get 'tipo_mascota/nuevo', as: 'nuevo_tipo_mascota'
-  post 'tipo_mascota/',to: 'tipo_mascota#crear'
-  put 'tipo_mascota/:id', to: 'tipo_mascotas#update'
-  patch 'tipo_mascota/:id', to: 'tipo_mascotas#update'
-  get 'tipo_mascota/:id/editar', to: 'tipo_mascota#esditar', as: 'editar_tipo_mascota'
-  get 'tipo_mascota/:id', to: 'tipo_mascota#mostrst', as: 'tipo_mascota'
-  delete 'tipo_mascota/:id', to: 'tipo_mascota#eliminar'
+  get 'tipo_mascotas/', to: 'tipo_mascota#index', as: 'tipo_mascotas'
+  get 'tipo_mascotas/nuevo', as: 'nuevo_tipo_mascota'
+  post 'tipo_mascotas/',to: 'tipo_mascota#crear'
+  put 'tipo_mascotas/:id', to: 'tipo_mascota#update'
+  patch 'tipo_mascotas/:id', to: 'tipo_mascota#update'
+  get 'tipo_mascotas/:id/editar', to: 'tipo_mascota#editar', as: 'editar_tipo_mascota'
+  get 'tipo_mascotas/:id', to: 'tipo_mascota#mostrar', as: 'tipo_mascota'
+  delete 'tipo_mascotas/:id', to: 'tipo_mascota#eliminar'
 
   get 'duenos/', to: 'duenos#index', as: 'duenos'
   get 'duenos/nuevo', as: 'nuevo_dueno'

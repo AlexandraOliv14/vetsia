@@ -1,7 +1,7 @@
 class DuenosController < ApplicationController
 before_action :set_dueno, only: [:mostrar,:editar,:eliminar, :update]  
   def index
-    @duenos = Dueno.paginate(:page => params[:page], :per_page => 20).order('updated_at DESC')
+    @dueno = Dueno.paginate(:page => params[:page], :per_page => 20).order('updated_at DESC')
   end
 
   def mostrar
