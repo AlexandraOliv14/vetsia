@@ -1,15 +1,15 @@
 class TipoMascotaController < ApplicationController
   before_action :set_tipo_mascotas, only: [:mostrar,:editar,:eliminar, :update]  
   def index
-    @tipomascota= Tipo_mascota.paginate(:page => params[:page], :per_page => 20).order('updated_at DESC')
+    @tipomascota= TipoMascota.paginate(:page => params[:page], :per_page => 20).order('updated_at DESC')
   end
 
   def nuevo
-    @tipomascota= Tipo_mascota.new
+    @tipomascota= TipoMascota.new
   end
 
   def crear
-    @tipomascota = Tipo_mascota.new(tipo_mascota_params)
+    @tipomascota = TipoMascota.new(tipo_mascota_params)
     respond_to do |format|
       if @tipomascota.save
         format.html{redirect_to @tipomascota, notice:  'Tipo de mascota Guardado Con Exito'}
@@ -51,7 +51,7 @@ class TipoMascotaController < ApplicationController
   
   #no repeteriemos esto en todos los metodos
   def set_tipo_mascotas
-    @tipo_mascotas = tipo_mascotas.find(params[:id])
+    @tipo_mascotas = tipoMascotas.find(params[:id])
   end
   
 end
