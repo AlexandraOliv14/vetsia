@@ -1,2 +1,6 @@
-<h1>TipoMascota#mostrar</h1>
+<h1><%=@tipo_mascota.descripcion%></h1>
 <p>Find me in app/views/tipo_mascota/mostrar.html.erb</p>
+
+Tipo de Mascota : <%= @tipo_mascota.descripcion.to_s%><br>
+
+<%= link_to 'Atras', tipo_mascotas_url %>
