@@ -10,8 +10,8 @@
         <% @tipomascota.each do |tipomascota| %>
           <tr>
               <td><%= tipomascota.descripcion %></td>
-              <td><%= link_to 'Mostrar', tipomascota %> </td>
-              <td><%= link_to 'Editar',editar_tipomascota_path(dueno) %></td>
+              <td><%= link_to 'Mostrar', tipo_mascota%> </td>
+              <td><%= link_to 'Editar',editar_tipomascota_path(tipomascota) %></td>
               <td><%= link_to "Delete", tipomascota_path(tipomascota), :confirm => "Are you sure?", :method => :eliminar %>
               </td>
           </tr>
