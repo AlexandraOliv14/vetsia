@@ -1,5 +1,14 @@
 Rails.application.routes.draw do
   
+  get 'mascotas/', to: 'mascota#index', as: 'mascotas'
+  get 'mascotas/nuevo', as: 'nueva_mascota' 
+  post 'mascotas/', to: 'mascota#crear'
+  put 'mascotas/:id', to: 'mascota#update'
+  patch 'mascotas/:id', to: 'mascota#update'
+  get 'mascotas/:id', to: 'mascota#mostrar', as: 'mascota'
+  get 'mascotas/eliminar', to: 'mascota#eliminar'
+  delete 'mascotas/:id/editar', to: 'mascota#editar', as: 'editar_mascota'
+
   get 'tipo_mascotas/', to: 'tipo_mascota#index', as: 'tipo_mascotas'
   get 'tipo_mascotas/nuevo', as: 'nuevo_tipo_mascota'
   post 'tipo_mascotas/',to: 'tipo_mascota#crear'

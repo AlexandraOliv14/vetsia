@@ -22,7 +22,7 @@ class TipoMascotaController < ApplicationController
   def update
     respond_to do |format|
       if @tipomascota.update(tipo_mascota_params)
-        format.html{redirect_to @tipomascota, notice: 'dueno Editado con Exito'}
+        format.html{redirect_to @tipomascota, notice: 'Tipo de mascota Editado con Exito'}
       else
         format.html{render :edit}
       end
@@ -35,7 +35,7 @@ class TipoMascotaController < ApplicationController
   def eliminar
     @tipomascota.destroy
     respond_to do |format|
-      format.html { redirect_to mascotas_url, notice: 'tipo de mascota eliminado con Exito.' }
+      format.html { redirect_to tipo_mascotas_url, notice: 'tipo de mascota eliminado con Exito.' }
     end
   end
 

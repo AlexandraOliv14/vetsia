@@ -1,0 +1,27 @@
+<h1>Mascota#index</h1>
+<p>Find me in app/views/mascota/index.html.erb</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Fecha de nacimiento</th>
+            <th>Tipo de Mascota</th>
+            <th>Dueño</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @mascota.each do |dueno| %>
+          <tr>
+              <td><%= mascota.nombre %></td>
+              <td><&=mascota.fecha_nac%></td>
+              <td><%= mascota.tipo_mascota_id %></td>
+              <td><%= mascota.dueno_id %></td>
+              <td><%= link_to 'Mostrar', mascota %> </td>
+              <td><%= link_to 'Editar',editar_mascota_path(mascota) %></td>
+              <td><%= link_to "Delete", mascota_path(mascota), :confirm => "Are you sure?", :method => :eliminar %>
+              </td>
+          </tr>
+        <% end %>
+    </tbody>
+</table>
+<%= will_paginate @mascota, renderer: BootstrapPagination::Rails %>
