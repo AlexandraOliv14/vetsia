@@ -51,7 +51,7 @@ class TipoMascotaController < ApplicationController
 
   #no repeteriemos esto en todos los metodos
   def set_tipo_mascotas
-    @tipo_mascotas = TipoMascota.find(params[:id])
+    @tipo_mascota = TipoMascota.find(params[:id])
   end
 
 end
