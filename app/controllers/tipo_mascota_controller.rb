@@ -1,5 +1,5 @@
 class TipoMascotaController < ApplicationController
-  before_action :set_tipo_mascotas, only: [:mostrar,:editar,:eliminar, :update]  
+  before_action :set_tipo_mascotas, only: [:mostrar,:editar,:eliminar, :update]
   def index
     @tipomascota= TipoMascota.paginate(:page => params[:page], :per_page => 20).order('updated_at DESC')
   end
@@ -33,25 +33,25 @@ class TipoMascotaController < ApplicationController
   end
 
   def eliminar
-    @tipomascota.destroy 
+    @tipomascota.destroy
     respond_to do |format|
-      format.html { redirect_to duenos_url, notice: 'tipo de mascota eliminado con Exito.' }
+      format.html { redirect_to mascotas_url, notice: 'tipo de mascota eliminado con Exito.' }
     end
   end
 
   def editar
   end
-  
+
   private
- 
+
   #strong paramas
   def tipo_mascota_params
     params.require(:tipo_mascota).permit(:descripcion)
   end
-  
+
   #no repeteriemos esto en todos los metodos
   def set_tipo_mascotas
-    @tipo_mascotas = tipoMascotas.find(params[:id])
+    @tipo_mascotas = TipoMascota.find(params[:id])
   end
-  
+
 end
