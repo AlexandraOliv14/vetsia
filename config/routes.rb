@@ -1,13 +1,22 @@
 Rails.application.routes.draw do
   
+  get 'estado/',to: 'estado#index', as: 'estados'
+  get 'estado/nuevo', as: 'nuevo_estado'
+  get 'estado/:id/editar', to: 'estado#editar', as: 'editar_estado'
+  get 'estado/:id',to: 'estado#mostrar', as: 'estado'
+  put 'estado/:id',to: 'estado#update'
+  patch 'estado/:id',to: 'estado#update'
+  delete 'estado/:id', to: 'estado#eliminar'
+  post 'estado/',to: 'estado#crear'
+
   get 'mascotas/', to: 'mascota#index', as: 'mascotas'
   get 'mascotas/nuevo', as: 'nueva_mascota' 
   post 'mascotas/', to: 'mascota#crear'
   put 'mascotas/:id', to: 'mascota#update'
   patch 'mascotas/:id', to: 'mascota#update'
   get 'mascotas/:id', to: 'mascota#mostrar', as: 'mascota'
-  get 'mascotas/eliminar', to: 'mascota#eliminar'
-  delete 'mascotas/:id/editar', to: 'mascota#editar', as: 'editar_mascota'
+  delete 'mascotas/:id', to: 'mascota#eliminar'
+  get 'mascotas/:id/editar', to: 'mascota#editar', as: 'editar_mascota'
 
   get 'tipo_mascotas/', to: 'tipo_mascota#index', as: 'tipo_mascotas'
   get 'tipo_mascotas/nuevo', as: 'nuevo_tipo_mascota'

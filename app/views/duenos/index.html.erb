@@ -13,19 +13,18 @@
         </tr>
     </thead>
     <tbody>
-        <% @dueno.each do |dueno| %>
+        <% @duenos.each do |dueno| %>
           <tr>
               <td><%= dueno.nombre %></td>
               <td><%= dueno.telefono %></td>
               <td><%= dueno.mail %><br></td>
               <td><%= link_to 'Mostrar', dueno %> </td>
               <td><%= link_to 'Editar',editar_dueno_path(dueno) %></td>
-              <td><%= link_to "Delete", dueno_path(dueno), :confirm => "Are you sure?", :method => :eliminar %>
+              <td><%= link_to "Eliminar", dueno_path(dueno), :confirm => "Are you sure?", :method => :eliminar %>
               </td>
           </tr>
         <% end %>
     </tbody>
 </table>
-<<<<<<< HEAD
-<%= will_paginate @dueno, renderer: BootstrapPagination::Rails %>
+<%= will_paginate @duenos, renderer: BootstrapPagination::Rails %>
 

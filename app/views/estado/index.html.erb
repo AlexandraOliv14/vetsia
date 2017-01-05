@@ -1,0 +1,23 @@
+<h1>Estado#index</h1>
+<h1> Estado</h1>
+<p>Find me in app/views/estado/index.html.erb</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Descripcion</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @estados.each do |estado| %>
+          <tr>
+              <td><%= estado.descripcion.to_s %></td>
+              <td><%= link_to 'Mostrar', estado_url(estado) %> </td>
+              <td><%= link_to 'Editar',estado_path(estado) %></td>
+              <td><%= link_to "Eliminar", estado_path(estado), :confirm => "Are you sure?", :method => :eliminar %>
+              </td>
+          </tr>
+        <% end %>
+    </tbody>
+</table>
+<%= will_paginate @estados, renderer: BootstrapPagination::Rails %>

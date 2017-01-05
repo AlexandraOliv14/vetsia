@@ -12,7 +12,7 @@ class TipoMascotaController < ApplicationController
     @tipomascota = TipoMascota.new(tipo_mascota_params)
     respond_to do |format|
       if @tipomascota.save
-        format.html{redirect_to @tipomascota, notice:  'Tipo de mascota Guardado Con Exito'}
+        format.html{redirect_to tipo_mascotas_url, notice:  'Tipo de mascota Guardado Con Exito'}
       else
         format.html{render :nuevo}
       end
@@ -22,7 +22,7 @@ class TipoMascotaController < ApplicationController
   def update
     respond_to do |format|
       if @tipomascota.update(tipo_mascota_params)
-        format.html{redirect_to @tipomascota, notice: 'Tipo de mascota Editado con Exito'}
+        format.html{redirect_to tipo_mascotas_url, notice: 'Tipo de mascota Editado con Exito'}
       else
         format.html{render :edit}
       end

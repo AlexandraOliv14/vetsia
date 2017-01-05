@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161228194325) do
+ActiveRecord::Schema.define(version: 20170105211042) do
 
   create_table "atenciones", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.datetime "fecha"
@@ -53,6 +53,10 @@ ActiveRecord::Schema.define(version: 20161228194325) do
   create_table "horarios", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "dia_id"
+    t.integer  "bloque_id"
+    t.index ["bloque_id"], name: "fk_rails_550d7ce9ce", using: :btree
+    t.index ["dia_id"], name: "fk_rails_d1f46933f9", using: :btree
   end
 
   create_table "mascotas", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -98,6 +102,8 @@ ActiveRecord::Schema.define(version: 20161228194325) do
   add_foreign_key "atenciones", "mascotas"
   add_foreign_key "atenciones", "mhs"
   add_foreign_key "atenciones", "tipo_atenciones", column: "tipo_atencion_id"
+  add_foreign_key "horarios", "bloques"
+  add_foreign_key "horarios", "dias"
   add_foreign_key "mascotas", "duenos"
   add_foreign_key "mascotas", "tipo_mascotas"
   add_foreign_key "mhs", "estados"

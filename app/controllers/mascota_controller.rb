@@ -1,18 +1,18 @@
 class MascotaController < ApplicationController
   before_action :set_mascota, only: [:mostrar,:editar,:eliminar, :update]
   def index
-    @mascota=Mascota.paginate(:page => params[:page], :per_page => 20).order('updated_at DESC')
+    @mascotas=Mascota.paginate(:page => params[:page], :per_page => 20).order('updated_at DESC')
   end
 
   def nuevo
-    @mascota=Mascota.new
+    @mascotas=Mascota.new
   end
 
   def crear
-    @mascota = Mascota.new(mascota_params)
+    @mascotas = Mascota.new(mascota_params)
     respond_to do |format|
-      if @mascota.save
-        format.html{redirect_to @mascota, notice:  'Mascota Guardado Con Exito'}
+      if @mascotas.save
+        format.html{redirect_to mascota_url, notice:  'Mascota Guardado Con Exito'}
       else
         format.html{render :nuevo}
       end
@@ -21,8 +21,8 @@ class MascotaController < ApplicationController
 
   def update
     respond_to do |format|
-      if @mascota.update(mascota_params)
-        format.html{redirect_to @mascota, notice: 'Mascota Editado con Exito'}
+      if @mascotas.update(mascota_params)
+        format.html{redirect_to mascota_url, notice: 'Mascota Editado con Exito'}
       else
         format.html{render :edit}
       end
@@ -33,7 +33,7 @@ class MascotaController < ApplicationController
   end
 
   def eliminar
-    @mascota.destroy
+    @mascotas.destroy
     respond_to do |format|
       format.html { redirect_to mascotas_url, notice: 'mascota eliminado con Exito.' }
     end
@@ -49,7 +49,7 @@ class MascotaController < ApplicationController
   end
   
   def set_mascota
-    @mascota = Mascota.find(params[:id])
+    @mascotas = Mascota.find(params[:id])
   end
   
 end

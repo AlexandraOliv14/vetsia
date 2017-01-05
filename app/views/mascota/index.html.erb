@@ -10,18 +10,18 @@
         </tr>
     </thead>
     <tbody>
-        <% @mascota.each do |dueno| %>
+        <% @mascotas.each do |mascota| %>
           <tr>
               <td><%= mascota.nombre %></td>
-              <td><&=mascota.fecha_nac%></td>
+              <td><%=mascota.fecha_nac%></td>
               <td><%= mascota.tipo_mascota_id %></td>
               <td><%= mascota.dueno_id %></td>
-              <td><%= link_to 'Mostrar', mascota %> </td>
+              <td><%= link_to 'Mostrar', mascota_url(mascota) %> </td>
               <td><%= link_to 'Editar',editar_mascota_path(mascota) %></td>
-              <td><%= link_to "Delete", mascota_path(mascota), :confirm => "Are you sure?", :method => :eliminar %>
+              <td><%= link_to "Eliminar", mascota_path(mascota), :confirm => "Are you sure?", :method => :eliminar %>
               </td>
           </tr>
         <% end %>
     </tbody>
 </table>
-<%= will_paginate @mascota, renderer: BootstrapPagination::Rails %>
+ <%= will_paginate @mascotas, renderer: BootstrapPagination::Rails %>

@@ -1,7 +1,7 @@
 class DuenosController < ApplicationController
 before_action :set_dueno, only: [:mostrar,:editar,:eliminar, :update]  
   def index
-    @dueno = Dueno.paginate(:page => params[:page], :per_page => 20).order('updated_at DESC')
+    @duenos = Dueno.paginate(:page => params[:page], :per_page => 20).order('updated_at DESC')
   end
 
   def mostrar
@@ -11,7 +11,7 @@ before_action :set_dueno, only: [:mostrar,:editar,:eliminar, :update]
   end
 
   def eliminar
-    @dueno.destroy 
+    @duenos.destroy 
     respond_to do |format|
       format.html { redirect_to duenos_url, notice: 'Dueño eliminado con Exito.' }
     end
@@ -19,8 +19,8 @@ before_action :set_dueno, only: [:mostrar,:editar,:eliminar, :update]
 
   def update
     respond_to do |format|
-      if @dueno.update(dueno_params)
-        format.html{redirect_to @dueno, notice: 'dueno Editado con Exito'}
+      if @duenos.update(dueno_params)
+        format.html{redirect_to dueno_url, notice: 'dueno Editado con Exito'}
       else
         format.html{render :edit}
       end
@@ -28,14 +28,14 @@ before_action :set_dueno, only: [:mostrar,:editar,:eliminar, :update]
   end
 
   def nuevo
-    @dueno = Dueno.new
+    @duenos = Dueno.new
   end
   
   def crear
-    @dueno = Dueno.new(dueno_params)
+    @duenos = Dueno.new(dueno_params)
     respond_to do |format|
-      if @dueno.save
-        format.html{redirect_to @dueno, notice:  'Dueño Guardado Con Exito'}
+      if @duenos.save
+        format.html{redirect_to dueno_url, notice:  'Dueño Guardado Con Exito'}
       else
         format.html{render :nuevo}
       end
@@ -51,6 +51,6 @@ before_action :set_dueno, only: [:mostrar,:editar,:eliminar, :update]
   
   #no repeteriemos esto en todos los metodos
   def set_dueno
-    @dueno = Dueno.find(params[:id])
+    @duenos = Dueno.find(params[:id])
   end
 end

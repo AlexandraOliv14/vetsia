@@ -4,3 +4,4 @@ class Horario < ApplicationRecord
   belongs_to :bloque
   has_many :mhs
 end
+
