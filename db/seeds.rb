@@ -16,3 +16,19 @@ Dia.create!([{descripcion: 'Lunes'},
   {descripcion: 'Sabado'},
   {descripcion: 'Domingo'}]
   )
+  
+Bloque.create!([{descripcion: '08:00 a 08:20'},
+  {descripcion: '08:21 a 08:41'},
+  {descripcion: '08:42 a 09:02'},
+  {descripcion: '09:03 a 09:23'},
+  {descripcion: '09:24 a 08:44'},
+  {descripcion: '09:45 a 10:05'},
+  {descripcion: '10:06 a 10:26'},
+  {descripcion: '10:27 a 10:47'},
+  {descripcion: '10:48 a 11:08'},
+  {descripcion: '11:09 a 11:29'},
+  {descripcion: '11:30 a 11:50'},
+  {descripcion: '11:51 a 12:11'},
+  {descripcion: '12:12 a 12:32'}
+  ]
+  )
