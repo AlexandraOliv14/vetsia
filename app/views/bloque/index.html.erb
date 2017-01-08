@@ -1,0 +1,23 @@
+<h1>Bloque#index</h1>
+<p>Find me in app/views/bloque/index.html.erb</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Descripcion</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @bloques.each do |bloque| %>
+          <tr>
+              <td><%= bloque.descripcion %></td>
+              <td><%= link_to 'Mostrar', bloque_url(bloque) %> </td>
+              <td><%= link_to 'Editar',editar_bloque_path(bloque) %></td>
+              <td><%= link_to "Eliminar", bloque_path(bloque), :confirm => "Are you sure?", :method => :eliminar %>
+              </td>
+          </tr>
+        <% end %>
+    </tbody>
+</table>
+<%= will_paginate @bloques, renderer: BootstrapPagination::Rails %>
+

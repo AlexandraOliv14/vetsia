@@ -29,6 +29,13 @@ Bloque.create!([{descripcion: '08:00 a 08:20'},
   {descripcion: '11:09 a 11:29'},
   {descripcion: '11:30 a 11:50'},
   {descripcion: '11:51 a 12:11'},
-  {descripcion: '12:12 a 12:32'}
+  {descripcion: '12:12 a 12:32'},
+  {descripcion: '12:53 a 13:13'},
+  {descripcion: '13:14 a 12:34'},
+  {descripcion: '13:35 a 13:55'},
+  {descripcion: '13:56 a 14:16'},
+  {descripcion: '14:17 a 14:37'},
+  {descripcion: '14:38 a 14:58'},
+  {descripcion: '14:59 a 15:19'},
   ]
   )

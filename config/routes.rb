@@ -1,5 +1,14 @@
 Rails.application.routes.draw do
   
+  get 'bloque/',to: 'bloque#index', as: 'bloques'
+  get 'bloque/:id',to: 'bloque#mostrar', as: 'bloque'
+  get 'bloque/:id/editar', to: 'bloque#editar', as: 'editar_bloque'
+  delete 'bloque/:id',to: 'bloque#eliminar'
+  put 'bloque/:id',to: 'bloque#update'
+  patch 'bloque/update',to: 'bloque#update'
+  get 'bloque/nuevo', as: 'nuevo_bloque'
+  post 'bloque/', to: 'estado#crear'
+
   get 'estado/',to: 'estado#index', as: 'estados'
   get 'estado/nuevo', as: 'nuevo_estado'
   get 'estado/:id/editar', to: 'estado#editar', as: 'editar_estado'
