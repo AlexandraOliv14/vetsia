@@ -11,7 +11,7 @@ class BloqueController < ApplicationController
   end
 
   def eliminar
-    @bloques.destroy
+    @bloque.destroy
     respond_to do |format|
       format.html { redirect_to bloques_url, notice: 'Bloque eliminado con Exito.' }
     end
@@ -19,7 +19,7 @@ class BloqueController < ApplicationController
 
   def update
     respond_to do |format|
-      if @bloques.update(bloque_params)
+      if @bloque.update(bloque_params)
         format.html{redirect_to bloque_url, notice: 'Bloque Editado con Exito'}
       else
         format.html{render :edit}
@@ -28,20 +28,20 @@ class BloqueController < ApplicationController
   end
 
   def nuevo
-    @bloques=Bloque.new
+    @bloque=Bloque.new
   end
 
   def crear
-    @bloques = Bloque.new(bloque_params)
+    @bloque = Bloque.new(bloque_params)
     respond_to do |format|
-      if @bloques.save
+      if @bloque.save
         format.html{redirect_to bloques_url, notice:  'Bloque Guardado Con Exito'}
       else
         format.html{render :nuevo}
       end
     end
   end
-  
+
   private
 
   #strong paramas
@@ -51,8 +51,7 @@ class BloqueController < ApplicationController
 
   #no repeteriemos esto en todos los metodos
   def set_bloque
-    @bloques = Bloque.find(params[:id])
+    @bloque = Bloque.find(params[:id])
   end
 
 end
-

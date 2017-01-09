@@ -3,7 +3,7 @@ class EstadoController < ApplicationController
   def crear
     @estado = Estado.new(estado_params)
     respond_to do |format|
-      if @estados.save
+      if @estado.save
         format.html{redirect_to estado_url, notice:  'Estado Guardado Con Exito'}
       else
         format.html{render :nuevo}
@@ -15,7 +15,7 @@ class EstadoController < ApplicationController
   end
 
   def eliminar
-    @estados.destroy
+    @estado.destroy
     respond_to do |format|
       format.html { redirect_to estados_url, notice: 'Estado eliminado con Exito.' }
     end
@@ -29,19 +29,19 @@ class EstadoController < ApplicationController
   end
 
   def nuevo
-    @estados= Estado.new
+    @estado= Estado.new
   end
 
   def update
     respond_to do |format|
-      if @estados.update(estado_params)
+      if @estado.update(estado_params)
         format.html{redirect_to estados_url, notice: 'Estado Editado con Exito'}
       else
         format.html{render :edit}
       end
     end
   end
-  
+
   private
 
   #strong paramas
@@ -51,6 +51,6 @@ class EstadoController < ApplicationController
 
   #no repeteriemos esto en todos los metodos
   def set_estado
-    @estados = Estado.find(params[:id])
+    @estado = Estado.find(params[:id])
   end
 end

@@ -5,13 +5,13 @@ class MascotaController < ApplicationController
   end
 
   def nuevo
-    @mascotas=Mascota.new
+    @mascota=Mascota.new
   end
 
   def crear
-    @mascotas = Mascota.new(mascota_params)
+    @mascota = Mascota.new(mascota_params)
     respond_to do |format|
-      if @mascotas.save
+      if @mascota.save
         format.html{redirect_to mascota_url, notice:  'Mascota Guardado Con Exito'}
       else
         format.html{render :nuevo}
@@ -21,7 +21,7 @@ class MascotaController < ApplicationController
 
   def update
     respond_to do |format|
-      if @mascotas.update(mascota_params)
+      if @mascota.update(mascota_params)
         format.html{redirect_to mascota_url, notice: 'Mascota Editado con Exito'}
       else
         format.html{render :edit}
@@ -33,7 +33,7 @@ class MascotaController < ApplicationController
   end
 
   def eliminar
-    @mascotas.destroy
+    @mascota.destroy
     respond_to do |format|
       format.html { redirect_to mascotas_url, notice: 'mascota eliminado con Exito.' }
     end
@@ -41,15 +41,15 @@ class MascotaController < ApplicationController
 
   def editar
   end
-  
+
   private
-  
+
    def mascota_params
     params.require(:mascota).permit(:nombre,:tipomascota)
   end
-  
+
   def set_mascota
-    @mascotas = Mascota.find(params[:id])
+    @mascota = Mascota.find(params[:id])
   end
-  
+
 end
