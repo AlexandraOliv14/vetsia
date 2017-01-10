@@ -13,7 +13,7 @@
               <td><%= bloque.descripcion %></td>
               <td><%= link_to 'Mostrar', bloque_url(bloque) %> </td>
               <td><%= link_to 'Editar',editar_bloque_path(bloque) %></td>
-              <td><%= link_to "Eliminar", bloque_path(bloque), :confirm => "Are you sure?", :method => :eliminar %>
+              <td><%= link_to "Eliminar", bloque, method: :delete, data: {confirm: 'Esta seguro?'} %>
               </td>
           </tr>
         <% end %>

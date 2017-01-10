@@ -14,7 +14,7 @@
               <td><%= estado.descripcion.to_s %></td>
               <td><%= link_to 'Mostrar', estado_url(estado) %> </td>
               <td><%= link_to 'Editar',estado_path(estado) %></td>
-              <td><%= link_to "Eliminar", estado_path(estado), :confirm => "Are you sure?", :method => :eliminar %>
+              <td><%= link_to "Eliminar", estado ,method: :delete, data: {confirm: 'Esta seguro?'}%>
               </td>
           </tr>
         <% end %>
