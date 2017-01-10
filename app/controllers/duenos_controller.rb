@@ -1,7 +1,7 @@
 class DuenosController < ApplicationController
 before_action :set_dueno, only: [:mostrar,:editar,:eliminar, :update]
   def index
-    @duenos = Dueno.paginate(:page => params[:page], :per_page => 20).order('updated_at DESC')
+    @duenos = Dueno.paginate(:page => params[:page], :per_page => 20).order('updated_at ASC')
   end
 
   def mostrar
@@ -11,12 +11,11 @@ before_action :set_dueno, only: [:mostrar,:editar,:eliminar, :update]
   end
 
   def eliminar
-    @duenos.destroy
-    respond_to do |format|
-      format.html { redirect_to duenos_url, notice: 'Dueño eliminado con Exito.' }
-    end
-
-  end
+     @dueno.destroy
+     respond_to do |format|
+       format.html { redirect_to galerias_url, notice: 'Imagen eliminada con Exito.' }
+     end
+   end
 
   def update
     respond_to do |format|

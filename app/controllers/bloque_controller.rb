@@ -1,7 +1,7 @@
 class BloqueController < ApplicationController
   before_action :set_bloque, only: [:mostrar,:editar,:eliminar, :update]
   def index
-    @bloques=Bloque.paginate(:page => params[:page], :per_page => 20).order('updated_at DESC')
+    @bloques=Bloque.paginate(:page => params[:page], :per_page => 20).order('updated_at ASC')
   end
 
   def mostrar
