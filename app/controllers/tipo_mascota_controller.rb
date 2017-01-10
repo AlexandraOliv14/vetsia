@@ -1,7 +1,7 @@
 class TipoMascotaController < ApplicationController
   before_action :set_tipo_mascotas, only: [:mostrar,:editar,:eliminar, :update]
   def index
-    @tipomascota= TipoMascota.paginate(:page => params[:page], :per_page => 20).order('updated_at DESC')
+    @tipomascota= TipoMascota.paginate(:page => params[:page], :per_page => 20).order('updated_at ASC')
   end
 
   def nuevo
