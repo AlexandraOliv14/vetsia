@@ -43,7 +43,7 @@ Rails.application.routes.draw do
   get 'duenos/:id', to: 'duenos#mostrar', as: 'dueno'
   put 'duenos/:id',to: 'duenos#update'
   patch 'duenos/:id' ,to: 'duenos#update'
-  delete 'duenos/:id', to: 'duenos#eliminar'
+  delete 'duenos/:id', to: 'duenos#eliminar', as:'eliminar_dueno'
 
   get 'atenciones/' , to: "atenciones#index", as: 'atenciones'
   get  'atenciones/nuevo',to: 'atenciones#nuevo'
