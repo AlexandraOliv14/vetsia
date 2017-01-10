@@ -11,7 +11,7 @@ before_action :set_dueno, only: [:mostrar,:editar,:eliminar, :update]
   end
 
   def eliminar
-    @duenos.destroy
+    @dueno.destroy
     respond_to do |format|
       format.html { redirect_to duenos_url, notice: 'Dueño eliminado con Exito.' }
     end
