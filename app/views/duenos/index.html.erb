@@ -18,8 +18,7 @@
               <td><%= dueno.mail %><br></td>
               <td><%= link_to 'Mostrar', dueno %> </td>
               <td><%= link_to 'Editar',editar_dueno_path(dueno) %></td>
-              <td><%= link_to 'Eliminar', duenos_path,
-                    method: :eliminar, data: { confirm: 'Are you sure?' } %></td>
+              <td><%= link_to 'Eliminar', { :action => :eliminar, :id => dueno.id }, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
               </td>
           </tr>
         <% end %>
