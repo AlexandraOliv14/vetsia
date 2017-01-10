@@ -1,12 +1,11 @@
-<h1>Mascota#mostrar</h1>
+<h1>Mascota</h1>
 <h1><%= @mascota.nombre.to_s %></h1>
 
-<p>Find me in app/views/mascota/mostrar.html.erb</p>
-
 Nombre = <%=@mascota.nombre.to_s%><br>
-id Tipo de mascota = <%=@mascota.tipo_mascota_id.to_s%><br>
-id Dueño = <%=@mascota.dueno_id.to_s%><br>
+Tipo de mascota = <%=@mascota.tipo_mascota.to_s%><br>
+Dueño = <%=@mascota.dueno.to_s%><br>
 Fecha de nacimiento = <%=@mascota.fecha_nac.to_s%>
 <br><br><br>
 
 <%= link_to 'Atras', mascotas_url %>
+<%= link_to 'Editar', editar_mascota_path(@mascota) %><tr>

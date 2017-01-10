@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  
+
   get 'bloque/',to: 'bloque#index', as: 'bloques'
   get 'bloque/:id',to: 'bloque#mostrar', as: 'bloque'
   get 'bloque/:id/editar', to: 'bloque#editar', as: 'editar_bloque'
@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   post 'estado/',to: 'estado#crear'
 
   get 'mascotas/', to: 'mascota#index', as: 'mascotas'
-  get 'mascotas/nuevo', as: 'nueva_mascota' 
+  get 'mascotas/nuevo',to: 'mascota#nuevo', as: 'nueva_mascota'
   post 'mascotas/', to: 'mascota#crear'
   put 'mascotas/:id', to: 'mascota#update'
   patch 'mascotas/:id', to: 'mascota#update'
@@ -44,7 +44,7 @@ Rails.application.routes.draw do
   put 'duenos/:id',to: 'duenos#update'
   patch 'duenos/:id' ,to: 'duenos#update'
   delete 'duenos/:id', to: 'duenos#eliminar'
-  
+
   get 'atenciones/' , to: "atenciones#index", as: 'atenciones'
   get  'atenciones/nuevo',to: 'atenciones#nuevo'
   post 'atenciones/', to: 'atenciones#crear'
@@ -53,6 +53,6 @@ Rails.application.routes.draw do
   put 'atenciones/:id',to: 'atenciones#update'
   patch 'atenciones/:id' ,to: 'atenciones#update'
   delete 'atenciones/:id', to: 'atenciones#eliminar'
-  
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

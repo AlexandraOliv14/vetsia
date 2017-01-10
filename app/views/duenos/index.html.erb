@@ -1,4 +1,4 @@
-<h1>Duenos</h1>
+<h1>Dueños</h1>
 <p>Find me in app/views/duenos/index.html.erb</p>
 <table class="table">
     <thead>
@@ -19,7 +19,7 @@
               <td><%= dueno.mail %><br></td>
               <td><%= link_to 'Mostrar', dueno %> </td>
               <td><%= link_to 'Editar',editar_dueno_path(dueno) %></td>
-              <td><%= link_to "Eliminar", dueno_path(dueno), :confirm => "Are you sure?", :method => :eliminar %>
+                <td><%= link_to "Eliminar", dueno_path(dueno), :confirm => "Are you sure?", :method => :eliminar %>
               </td>
           </tr>
         <% end %>

@@ -49,7 +49,7 @@ before_action :set_dueno, only: [:mostrar,:editar,:eliminar, :update]
     params.require(:dueno).permit(:nombre,:telefono, :mail)
   end
 
-  #no repeteriemos esto en todos los metodos
+  #no repetiremos esto en todos los metodos
   def set_dueno
     @dueno = Dueno.find(params[:id])
   end
