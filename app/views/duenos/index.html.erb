@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <h1>Dueños</h1>
 <table class="table">
     <thead>
@@ -16,7 +17,7 @@
               <td><%= dueno.nombre %></td>
               <td><%= dueno.telefono %></td>
               <td><%= dueno.mail %><br></td>
-              <td><%= link_to 'Mostrar', dueno %> </td>
+              <td><%= link_to 'Mostrar', dueno,class: 'btn btn-success' %> </td>
               <td><%= link_to 'Editar',editar_dueno_path(dueno) %></td>
               <td><%= link_to'Eliminar',dueno , method: :delete, data: {confirm: 'Esta seguro?'} %></td>
           </tr>

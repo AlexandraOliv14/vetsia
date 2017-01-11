@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <h1>Estado#index</h1>
 <h1> Estado</h1>
 <p>Find me in app/views/estado/index.html.erb</p>
@@ -12,7 +13,7 @@
         <% @estados.each do |estado| %>
           <tr>
               <td><%= estado.descripcion.to_s %></td>
-              <td><%= link_to 'Mostrar', estado_url(estado) %> </td>
+              <td><%= link_to 'Mostrar', estado_url(estado),class: 'btn-success' %> </td>
               <td><%= link_to 'Editar',estado_path(estado) %></td>
               <td><%= link_to "Eliminar", estado ,method: :delete, data: {confirm: 'Esta seguro?'}%>
               </td>
