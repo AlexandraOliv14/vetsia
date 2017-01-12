@@ -5,10 +5,10 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-
-
+gem 'therubyracer'
+gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
-gem 'coffee-script-source', '1.8.0'
+gem 'coffee-script-source'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.1'
 # Use mysql as the database for Active Record
