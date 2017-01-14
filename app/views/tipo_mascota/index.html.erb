@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <h1>TipoMascota#index</h1>
 <p>Find me in app/views/tipo_mascota/index.html.erb</p>
 <table class="table">
@@ -11,9 +10,9 @@
         <% @tipomascota.each do |tipomascota| %>
           <tr>
               <td><%= tipomascota.descripcion %></td>
-              <td><%= link_to 'Mostrar', tipo_mascota_url(tipomascota) %> </td>
-              <td><%= link_to 'Editar',editar_tipo_mascota_path(tipomascota) %></td>
-              <td><%= link_to "Delete", tipomascota , method: :delete, data: {confirm: 'Esta seguro?'} %>
+              <td><%= link_to 'Mostrar', tipo_mascota_url(tipomascota),class: 'btn btn-success ' %> </td>
+              <td><%= link_to 'Editar',editar_tipo_mascota_path(tipomascota),class: 'btn btn-warning ' %></td>
+              <td><%= link_to "Eliminar", tipo_mascota_path(tipomascota) ,class: 'btn btn-danger ',  method: :delete, data: {confirm: 'Esta seguro?'} %>
               </td>
           </tr>
         <% end %>

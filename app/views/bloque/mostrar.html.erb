@@ -1,7 +1,8 @@
 <h1>Bloque#mostrar</h1>
 <p>Find me in app/views/bloque/mostrar.html.erb</p>
-
-Bloque <%= @bloque.id.to_s%> : <%=@bloque.descripcion.to_s %><br>
-<br>
-
-<%= link_to 'Atras', bloques_url %>
+<p class= "text-center">
+Bloque <%= @bloque.id.to_s%> : <%=@bloque.descripcion.to_s %>
+</p>
+<br><br><br>
+<%= link_to 'Editar', editar_bloque_path(@bloque), class: 'btn btn-warning '  %><tr>
+<%= link_to 'Atras', bloques_path(@bloque),class: 'btn btn-info ' %>

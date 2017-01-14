@@ -1,11 +1,11 @@
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-<h1><%=@dueno.nombre  %></h1>
-<p>Find me in app/views/duenos/mostrar.html.erb</p>
-ID: <%=@dueno.id.to_s %><br>
+<h1 class= "text-center"><%=@dueno.nombre %></h1>
+<p>Find me in app/views/duenos/mostrar.html.erb</p> <br>
+<p class= "text-center">
+ID: <%=@dueno.id.to_s %> <br>
 Nombre : <%= @dueno.nombre.to_s %><br>
 Telefono : <%= @dueno.telefono.to_s  %><br>
 E-mail : <%= @dueno.mail.to_s %>
-
+</p>
 <br><br><br>
-<%= link_to 'Editar', editar_dueno_path(@dueno) %><tr>
-<%= link_to 'Atras', duenos_url %>
+<%= link_to 'Editar', editar_dueno_path(@dueno), class: 'btn btn-warning '  %><tr>
+<%= link_to 'Atras', duenos_url,class: 'btn btn-info '  %>

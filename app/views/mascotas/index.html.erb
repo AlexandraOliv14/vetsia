@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <h1>Mascotas</h1>
 <p>Find me in app/views/mascota/index.html.erb</p>
 <table class="table">
@@ -17,9 +16,9 @@
               <td><%=mascota.fecha_nac%></td>
               <td><%= mascota.tipo_mascota_id %></td>
               <td><%= mascota.dueno_id %></td>
-              <td><%= link_to 'Mostrar', mascotas,class: 'btn btn-success btn-xs' %> </td>
-              <td><%= link_to 'Editar',editar_mascota_path(mascota),class: 'btn btn-warning btn-xs'  %></td>
-              <td><%= link_to'Eliminar',mascota,class: 'btn btn-danger btn-xs' , method: :delete, data: {confirm: 'Esta seguro?'} %></td>
+              <td><%= link_to 'Mostrar', mascota_path(mascota),class: 'btn btn-success ' %> </td>
+              <td><%= link_to 'Editar',editar_mascota_path(mascota),class: 'btn btn-warning '  %></td>
+              <td><%= link_to'Eliminar',mascota_path(mascota),class: 'btn btn-danger ' , method: :delete, data: {confirm: 'Esta seguro?'} %></td>
           </td>
           </tr>
         <% end %>

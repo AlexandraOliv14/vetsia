@@ -1,10 +1,12 @@
 <h1>Mascota</h1>
+<p class= "text-center">
 
 Id Mascota : <%=@mascota.id.to_s%><br>
 Nombre:  <%=@mascota.nombre.to_s%><br>
 Tipo de mascota:  <%=@mascota.tipo_mascota_id.to_s%><br>
 Dueño :  <%=@mascota.dueno_id.to_s%><br>
 Fecha de nacimiento : <%=@mascota.fecha_nac.to_s%>
+</p>
 <br><br><br>
-<%= link_to 'Editar', editar_mascota_path(@mascota) %><tr>
-<%= link_to 'Atras', mascotas_url %>
+<%= link_to 'Editar', editar_mascota_path(@mascota),class: 'btn btn-warning ' %><tr>
+<%= link_to 'Atras', mascotas_url, class: 'btn btn-info ' %>

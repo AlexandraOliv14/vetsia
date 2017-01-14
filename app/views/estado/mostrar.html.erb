@@ -1,8 +1,8 @@
-<h1>Estado#mostrar</h1>
-<h1>Estado</h1>
+<h1 class= "text-center">Estados</h1>
 <p>Find me in app/views/estado/mostrar.html.erb</p>
-
-Descripcion = <%=@estados.descripcion.to_s%>
+<p class= "text-center">
+Descripcion = <%=@estado.descripcion.to_s%>
+</p>
 <br><br><br>
-
-<%= link_to 'Atras', estados_url %>
+<%= link_to 'Editar', editar_estado_path(@estado),class: 'btn btn-warning ' %><tr>
+<%= link_to 'Atras', estados_url ,class: 'btn btn-info ' %>

@@ -1,5 +1,8 @@
-<h1><% "Mascotas"  %></h1>
 
-Tipo de Mascota : <%= @tipo_mascota.descripcion.to_s%><br>
-
-<%= link_to 'Atras', tipo_mascotas_url %>
+<h1 class= "text-center"> "Mascotas"  </h1><br><br>
+<p class= "text-center">
+Tipo de Mascota : <%= @tipo_mascota.descripcion.to_s%>
+</p>
+<br><br><br>
+<%= link_to 'Editar', editar_tipo_mascota_path(@tipo_mascota),class: 'btn btn-warning ' %><tr>
+<%= link_to 'Atras', tipo_mascotas_path(@tipo_mascota), class: 'btn btn-info '%>
