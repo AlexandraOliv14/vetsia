@@ -16,6 +16,9 @@ Dia.create!([{descripcion: 'Lunes'},
   {descripcion: 'Sabado'},
   {descripcion: 'Domingo'}]
   )
+
+TipoAtencion.create!([{descripcion: 'Control'},
+    {descripcion: 'Operacion'}])
   
 Bloque.create!([{descripcion: '08:00 a 08:20'},
   {descripcion: '08:21 a 08:41'},

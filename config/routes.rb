@@ -1,5 +1,23 @@
 Rails.application.routes.draw do
 
+  get 'tipo_atenciones/',to: 'tipo_atencion#index', as: 'tipo_atenciones'
+  get 'tipo_atenciones/:id',to: 'tipo_atencion#mostrar', as: 'tipo_atencion'
+  get 'tipo_atenciones/:id/editar',to: 'tipo_atencion#editar', as: 'tipo_atencion_editar'
+  delete 'tipo_atenciones/:id',to: 'tipo_atencion#eliminar'
+  put 'tipo_atenciones/:id', to: 'tipo_atencion#update'
+  patch 'tipo_atenciones/update',to: 'tipo_atencion#update'
+  get 'tipo_atenciones/nuevo', to: 'nuevo_tipo_atencion'
+  get 'tipo_atenciones/',to: 'tipo_atencion#crear'
+
+#  get 'medicos/',to: 'medico#index', as: 'medicos'
+#  get 'medicos/:id',to: 'medico#mostrar', as: 'medico'
+#  get 'medicos/:id/editar', to: 'medico#editar', as: 'editar_medico'
+#  delete 'medicos/:id',to: 'medico#eliminar'
+#  put 'medicos/:id',to: 'medico#update'
+#  patch 'medicos/update', to: 'medico#update'
+#  get 'medicos/nuevo', as: 'nuevo_medico'
+#  post 'medicos/', to: 'medico#crear'
+
   get 'bloques/',to: 'bloque#index', as: 'bloques'
   get 'bloques/:id',to: 'bloque#mostrar', as: 'bloque'
   get 'bloques/:id/editar', to: 'bloque#editar', as: 'editar_bloque'
