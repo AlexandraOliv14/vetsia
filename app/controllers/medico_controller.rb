@@ -1,4 +1,4 @@
-#class MedicoController < ApplicationController
+class MedicoController < ApplicationController
 before_action :set_medico, only: [:mostrar,:editar,:eliminar, :update]
 
   def index

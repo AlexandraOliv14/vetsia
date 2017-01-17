@@ -1,3 +1,3 @@
 class Medico < ApplicationRecord
-has many :mhs
+has_many :mhs
 end

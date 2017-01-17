@@ -1,2 +1,20 @@
 <h1>Medico#index</h1>
 <p>Find me in app/views/medico/index.html.erb</p>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @medicos.each do |medico| %>
+          <tr>
+              <td><%= medico.nombre %></td>
+              <td><%= link_to 'Mostrar', medico_path(medico),class: 'btn btn-success ' %> </td>
+              <td><%= link_to 'Editar',editar_medico_path(medico),class: 'btn btn-warning '  %></td>
+              <td><%= link_to'Eliminar',medico_path(medico),class: 'btn btn-danger ' , method: :delete, data: {confirm: 'Esta seguro?'} %></td>
+          </tr>
+        <% end %>
+    </tbody>
+</table>
+<%= will_paginate @medicos, renderer: BootstrapPagination::Rails %>
