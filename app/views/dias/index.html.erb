@@ -1,0 +1,22 @@
+<h1>Dias#index</h1>
+<p>Find me in app/views/dias/index.html.erb</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Descripcion</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @dias.each do |dia| %>
+          <tr>
+              <td><%= dia.descripcion %></td>
+              <td><%= link_to 'Mostrar', dia_url(dia),class: 'btn btn-success ' %> </td>
+              <td><%= link_to 'Editar',dias_editar_path(dia),class: 'btn btn-warning' %></td>
+              <td><%#= link_to "Eliminar", dias_path(dia),class: 'btn btn-danger', method: :delete, data: {confirm: 'Esta seguro?'} %>
+              </td>
+          </tr>
+        <% end %>
+    </tbody>
+</table>
+<%= will_paginate @dias, renderer: BootstrapPagination::Rails %>

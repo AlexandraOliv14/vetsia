@@ -13,7 +13,7 @@
               <td><%= bloque.descripcion %></td>
               <td><%= link_to 'Mostrar', bloque_url(bloque),class: 'btn btn-success ' %> </td>
               <td><%= link_to 'Editar',editar_bloque_path(bloque),class: 'btn btn-warning' %></td>
-              <td><%= link_to "Eliminar", bloque_path(bloque),class: 'btn btn-danger', method: :delete, data: {confirm: 'Esta seguro?'} %>
+              <td><%#= link_to "Eliminar", bloques_path(bloque),class: 'btn btn-danger', method: :delete, data: {confirm: 'Esta seguro?'} %>
               </td>
           </tr>
         <% end %>

@@ -1,4 +1,31 @@
 Rails.application.routes.draw do
+ 
+  get 'medicoshorarios/',to: 'medicoshorarios#index', as: 'medicoshorarios'
+  get 'medicoshorarios/:id',to: 'medicoshorarios#mostrar', as: 'medicoshorario'
+  get 'medicoshorarios/:id/editar',to: 'medicoshorarios#editar', as: 'medicoshorarios_editar'
+  delete 'medicoshorarios/:id',to: 'medicoshorarios#eliminar'
+  put 'medicoshorarios/:id', to: 'medicoshorarios#update'
+  patch 'medicoshorarios/update', to: 'medicoshorarios#update'
+  get 'medicoshorarios/nuevo', to: 'medicoshorarios#nuevos', as: 'nuevo_medicoshorarios'
+  post 'medicoshorarios/',to: 'medicoshorarios#crear'
+
+  get 'horarios/',to: 'horarios#index', as: 'horarios'
+  get 'horarios/:id',to: 'horarios#mostrar', as: 'horario'
+  get 'horarios/:id/editar',to: 'horarios#editar',as: 'horarios_editar'
+  delete 'horarios/:id',to: 'horarios#eliminar'
+  put 'horarios/:id',to: 'horarios#update'
+  patch 'horarios/update',to: 'horarios#update'
+  get 'horarios/nuevo', to: 'horarios#nuevos' ,as: 'nuevo_horario'
+  post 'horarios/',to: 'horarios#crear'
+
+  get 'dias/',to: 'dias#index', as: 'dias'
+  get 'dias/:id',to: 'dias#mostrar', as: 'dia'
+  get 'dias/:id/editar', to: 'dias#mostrar', as: 'dias_editar'
+  delete 'dias/:id',to: 'dias#eliminar'
+  put 'dias/:id',to: 'dias#update'  
+  patch 'dias/update',to: 'dias#update' 
+  get 'dias/nuevo', to: 'dias#nuevo' ,as: 'nuevo_dia'
+  post 'dias/',to: 'dias#crear'
 
   get 'tipo_atenciones/',to: 'tipo_atenciones#index', as: 'tipo_atenciones'
   get 'tipo_atenciones/:id',to: 'tipo_atenciones#mostrar', as: 'tipo_atencion'
@@ -7,7 +34,7 @@ Rails.application.routes.draw do
   put 'tipo_atenciones/:id', to: 'tipo_atenciones#update'
   patch 'tipo_atenciones/update',to: 'tipo_atenciones#update'
   get 'tipo_atenciones/nuevo', to: 'tipo_atenciones#nuevo' ,as: 'nuevo_tipo_atencion'
-  get 'tipo_atenciones/',to: 'tipo_atenciones#crear'
+  post 'tipo_atenciones/',to: 'tipo_atenciones#crear'
 
   get 'medicos/',to: 'medico#index', as: 'medicos'
   get 'medicos/:id',to: 'medico#mostrar', as: 'medico'
