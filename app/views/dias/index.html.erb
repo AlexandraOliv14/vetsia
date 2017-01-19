@@ -13,7 +13,7 @@
               <td><%= dia.descripcion %></td>
               <td><%= link_to 'Mostrar', dia_url(dia),class: 'btn btn-success ' %> </td>
               <td><%= link_to 'Editar',dias_editar_path(dia),class: 'btn btn-warning' %></td>
-              <td><%#= link_to "Eliminar", dias_path(dia),class: 'btn btn-danger', method: :delete, data: {confirm: 'Esta seguro?'} %>
+              <td><%= link_to "Eliminar", dias_path(dia),class: 'btn btn-danger', method: :delete, data: {confirm: 'Esta seguro?'} %>
               </td>
           </tr>
         <% end %>

@@ -1,0 +1,33 @@
+<%= form_for(@medicoshorario, :html => { :role => "form" }) do |f| %>
+  <% if @medicoshorario.errors.any? %>
+    <div class="alert alert-danger alert-dismissable" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+        <h4><%= pluralize(@medicoshorario.errors.count,"error") %> prohibido guardar este dueño:</h4>
+
+        <ul>
+            <% @medicoshorario.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+        </ul>
+
+      <% end %>
+      
+      <table class="table table-striped">
+    <thead>
+        <tr>
+            <% @dias.each do |dia| %>
+            <%=dia.descripcion%>
+        </tr>
+    </thead>
+    <tbody>
+        <% @bloques.each do |bloque| %>
+        <% @horarios.each do |horario| %>
+          <tr>
+              <td><%= bloque.descripcion %></td>
+              <td><%%></td>
+          </tr>
+        <% end %>
+    </tbody>
+</table>
+        
+      
