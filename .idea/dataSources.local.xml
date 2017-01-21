@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="PostgreSQL - pruebadb@localhost" uuid="12f67e80-e729-461b-9513-5c6e61270042">
+      <secret-storage>memory</secret-storage>
+      <first-sync>true</first-sync>
+      <user-name>prueba</user-name>
+    </data-source>
+    <data-source name="PostgreSQL - pruebadb@localhost [2]" uuid="f07947c6-c564-4d7c-a4ba-cef97dd6fd00">
+      <secret-storage>master_key</secret-storage>
+      <user-name>prueba</user-name>
+      <schema-pattern>pruebadb.pg_catalog pruebadb.public</schema-pattern>
+      <default-schemas>pruebadb.pg_catalog pruebadb.public</default-schemas>
+    </data-source>
+  </component>
+</project>

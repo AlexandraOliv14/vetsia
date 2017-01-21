@@ -1,4 +1,4 @@
-class CreateMascota < ActiveRecord::Migration[5.0]
+class CreateMascotas  < ActiveRecord::Migration[5.0]
   def change
     create_table :mascotas do |t|
       t.string :nombre

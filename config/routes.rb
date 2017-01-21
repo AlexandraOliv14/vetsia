@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
- 
+
+
+  root 'atenciones#index'
+  devise_for :usuarios
   get 'medicoshorarios/',to: 'medicoshorarios#index', as: 'medicoshorarios'
   get 'medicoshorarios/:id',to: 'medicoshorarios#mostrar', as: 'medicoshorario'
   get 'medicoshorarios/:id/editar',to: 'medicoshorarios#editar', as: 'medicoshorarios_editar'
