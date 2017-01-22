@@ -1,35 +1,36 @@
-<%= form_for @mascota, url: mascota_path do |f| %>
-  <% if @mascota.errors.any? %>
-    <div class="alert alert-danger alert-dismissable" role="alert">
-        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
-        <h4><%= pluralize(@mascota.errors.count, "error") %> prohibido guardar esta mascota:</h4>
+<%= form_for @mascota, url: mascotas_path, html: {method: :post} do |f| %>
+    <% if @mascota.errors.any? %>
+        <div class="alert alert-danger alert-dismissable" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+          <h4><%= pluralize(@mascota.errors.count, "error") %> prohibido guardar esta mascota:</h4>
 
-        <ul>
+          <ul>
             <% @mascota.errors.full_messages.each do |msg| %>
-              <li><%= msg %></li>
+                <li><%= msg %></li>
             <% end %>
-        </ul>
-
-      <% end %>
-
-
-      <%= f.label :nombre %>
-      <br>
-      <%= f.text_field :nombre %>
-      <br><br>
-      <%= f.label :fecha_nacimiento %>
-      <br>
-      <%= f.text_field :fecha_nac%>
-      <br><br>
-      <%= f.label :tipo_mascota_id %>
-      <br>
-      <%= f.text_field :tipo_mascota_id %>
-      <br><br>
-      <%= f.label :dueno_id %><br>
-      <%= f.text_field :dueno_id %>
-      <br>
-      <br>
-
-      <%= f.submit %>
+          </ul>
 
     <% end %>
+
+
+    <%= f.label :nombre %>
+    <br>
+    <%= f.text_field :nombre %>
+    <br><br>
+    <%= f.label :fecha_nacimiento %>
+    <br>
+    <%= f.text_field :fecha_nac %>
+    <br><br>
+    <%= f.label :tipo_mascota_id %>
+    <br>
+    <%= f.text_field :tipo_mascota_id %>
+    <br><br>
+    <%= f.label :dueno_id %><br>
+    <%= f.select('dueno_id', Dueno.all.collect { |c| [c.nombre, c.id] }, {include_blank: true},
+                 {class: 'chosen-select'}) %>
+    <br>
+    <br>
+
+    <%= f.submit %>
+
+<% end %>
