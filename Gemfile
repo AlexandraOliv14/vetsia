@@ -16,6 +16,7 @@ gem 'pg'
 
 gem 'devise'
 
+gem 'chosen-rails'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets

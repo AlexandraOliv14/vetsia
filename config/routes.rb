@@ -68,7 +68,7 @@ Rails.application.routes.draw do
 
   delete 'mascotas/:id', to: 'mascotas#eliminar'
   get 'mascotas/', to: 'mascotas#index', as: 'mascotas'
-  get 'mascotas/nuevo',to: 'mascota#nuevo' ,as: 'nueva_mascota'
+  get 'mascotas/nuevo',to: 'mascotas#nuevo' ,as: 'nueva_mascota'
   post 'mascotas/', to: 'mascotas#crear'
   get 'mascotas/:id/editar', to: 'mascotas#editar', as: 'editar_mascota'
   get 'mascotas/:id', to: 'mascotas#mostrar', as: 'mascota'
@@ -86,7 +86,7 @@ Rails.application.routes.draw do
 
   delete 'duenos/:id', to: 'duenos#eliminar'
   get 'duenos/', to: 'duenos#index', as: 'duenos'
-  get 'duenos/nuevo', to: 'dueno#nuevo' ,as: 'nuevo_dueno'
+  get 'duenos/nuevo', to: 'duenos#nuevo' ,as: 'nuevo_dueno'
   post 'duenos/', to: 'duenos#crear'
   get 'duenos/:id/editar', to: 'duenos#editar', as: 'editar_dueno'
   get 'duenos/:id', to: 'duenos#mostrar', as: 'dueno'

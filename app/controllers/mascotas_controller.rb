@@ -5,7 +5,7 @@ class MascotasController < ApplicationController
   end
 
   def nuevo
-    @mascota=Mascota.new
+    @mascota = Mascota.new
   end
 
   def crear
