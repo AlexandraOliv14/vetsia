@@ -1,0 +1,23 @@
+<%= form_for @bloque, url: bloque_path, html: {method: :post} do |f| %>
+  <% if @bloque.errors.any? %>
+    <div class="alert alert-danger alert-dismissable" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+        <h4><%= pluralize(@bloque.errors.count,"error") %> prohibido guardar este tbloque:</h4>
+
+        <ul>
+            <% @bloque.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+        </ul>
+
+      <% end %>
+
+
+      <%= f.label :bloque %> </br>
+      <%= f.text_field :descripcion %><br><br>
+
+
+      <%= f.submit %>
+
+
+    <% end %>

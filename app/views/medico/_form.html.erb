@@ -1,0 +1,22 @@
+<%= form_for @medico, url: medicos_path, html: {method: :post} do |f| %>
+  <% if @medico.errors.any? %>
+    <div class="alert alert-danger alert-dismissable" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+        <h4><%= pluralize(@medico.errors.count,"error") %> prohibido guardar este dueño:</h4>
+
+        <ul>
+            <% @medico.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+        </ul>
+
+      <% end %>
+
+
+      <%= f.label :nombre %> </br>
+      <%= f.text_field :nombre %><br><br>
+
+      <%= f.submit %>
+
+
+    <% end %>

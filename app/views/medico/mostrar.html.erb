@@ -1,2 +1,9 @@
-<h1>Medico#mostrar</h1>
-<p>Find me in app/views/medico/mostrar.html.erb</p>
+<h1 class= "text-center"><%=@medico.nombre %></h1>
+<p class= "text-center">
+ID: <%=@medico.id.to_s %> <br>
+Nombre : <%= @medico.nombre.to_s %><br>
+
+</p>
+<br><br><br>
+<%= link_to 'Editar', editar_medico_path(@medico), class: 'btn btn-warning '  %><tr>
+<%= link_to 'Atras', medicos_url,class: 'btn btn-info '  %>

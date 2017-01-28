@@ -12,31 +12,31 @@
 
 ActiveRecord::Schema.define(version: 20170121232533) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
-  create_table "atenciones", force: :cascade do |t|
+  create_table "atenciones", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.datetime "fecha"
     t.integer  "tipo_atencion_id"
     t.integer  "mascota_id"
     t.integer  "mh_id"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+    t.index ["mascota_id"], name: "fk_rails_04943f5977", using: :btree
+    t.index ["mh_id"], name: "fk_rails_75af18ed7a", using: :btree
+    t.index ["tipo_atencion_id"], name: "fk_rails_958a26e414", using: :btree
   end
 
-  create_table "bloques", force: :cascade do |t|
+  create_table "bloques", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "descripcion"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
 
-  create_table "dias", force: :cascade do |t|
+  create_table "dias", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "descripcion"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
 
-  create_table "duenos", force: :cascade do |t|
+  create_table "duenos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "nombre"
     t.string   "telefono"
     t.string   "mail"
@@ -44,55 +44,62 @@ ActiveRecord::Schema.define(version: 20170121232533) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "estados", force: :cascade do |t|
+  create_table "estados", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "descripcion"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
 
-  create_table "horarios", force: :cascade do |t|
+  create_table "horarios", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "dia_id"
     t.integer  "bloque_id"
+    t.index ["bloque_id"], name: "fk_rails_550d7ce9ce", using: :btree
+    t.index ["dia_id"], name: "fk_rails_d1f46933f9", using: :btree
   end
 
-  create_table "mascotas", force: :cascade do |t|
+  create_table "mascotas", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "nombre"
     t.datetime "fecha_nac"
     t.integer  "dueno_id"
     t.integer  "tipo_mascota_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.index ["dueno_id"], name: "fk_rails_261100c943", using: :btree
+    t.index ["tipo_mascota_id"], name: "fk_rails_7802efa511", using: :btree
   end
 
-  create_table "medicos", force: :cascade do |t|
+  create_table "medicos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "nombre"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "mhs", force: :cascade do |t|
+  create_table "mhs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "medico_id"
     t.integer  "estado_id"
     t.integer  "horario_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["estado_id"], name: "fk_rails_f665d63eb3", using: :btree
+    t.index ["horario_id"], name: "fk_rails_a8421b9965", using: :btree
+    t.index ["medico_id"], name: "fk_rails_e2668036f6", using: :btree
   end
 
-  create_table "tipo_atenciones", force: :cascade do |t|
+  create_table "tipo_atenciones", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "descripcion"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
 
-  create_table "tipo_mascotas", force: :cascade do |t|
+  create_table "tipo_mascotas", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "descripcion"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
 
-  create_table "usuarios", force: :cascade do |t|
+  create_table "usuarios", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
@@ -101,8 +108,8 @@ ActiveRecord::Schema.define(version: 20170121232533) do
     t.integer  "sign_in_count",          default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
-    t.inet     "current_sign_in_ip"
-    t.inet     "last_sign_in_ip"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.index ["email"], name: "index_usuarios_on_email", unique: true, using: :btree

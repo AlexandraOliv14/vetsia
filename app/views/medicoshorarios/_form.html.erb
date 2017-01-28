@@ -12,22 +12,3 @@
 
       <% end %>
       
-      <table class="table table-striped">
-    <thead>
-        <tr>
-            <% @dias.each do |dia| %>
-            <%=dia.descripcion%>
-        </tr>
-    </thead>
-    <tbody>
-        <% @bloques.each do |bloque| %>
-        <% @horarios.each do |horario| %>
-          <tr>
-              <td><%= bloque.descripcion %></td>
-              <td><%%></td>
-          </tr>
-        <% end %>
-    </tbody>
-</table>
-        
-      

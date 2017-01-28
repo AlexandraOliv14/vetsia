@@ -1,2 +1,26 @@
-<h1>Medicoshorarios#index</h1>
-<p>Find me in app/views/medicoshorarios/index.html.erb</p>
+<h1>Horarios de los medicos</h1>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Medico</th>
+            <th>Dia</th>
+            <th>Bloque</th>
+            <th>Estado</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @medicoshorarios.each do |medicoshorarios| %>
+          <tr>
+              <td><%= medicoshorarios.medico.nombre %></td>
+              <td><%= medicoshorarios.horario.dia.descripcion %></td>
+              <td><%= medicoshorarios.horario.bloque.descripcion %></td>
+              <td><%= medicoshorarios.estado.descripcion %></td>
+              <td><%= link_to 'Mostrar', medicoshorarios_path(medicoshorarios),class: 'btn btn-success ' %> </td>
+              <td><%= link_to 'Editar',medicoshorarios_editar_path(medicoshorarios),class: 'btn btn-warning '  %></td>
+              <td><%#= link_to'Eliminar',medicoshorarios_path(medicoshorarios),class: 'btn btn-danger ' , method: :delete, data: {confirm: 'Esta seguro?'} %></td>
+          </tr>
+        <% end %>
+    </tbody>
+</table>
+<%= will_paginate @medicoshorarios, renderer: BootstrapPagination::Rails %>

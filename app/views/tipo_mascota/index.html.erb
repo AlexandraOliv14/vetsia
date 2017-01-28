@@ -1,5 +1,6 @@
-<h1>TipoMascota#index</h1>
-<p>Find me in app/views/tipo_mascota/index.html.erb</p>
+<h1>Tipos de Mascotas</h1>
+<span class="tn btn-default btn-lg bt pull-right glyphicon glyphicon-plus"><%= link_to 'Crear Tipo de Mascota',nuevo_tipo_mascota_url %></span>
+
 <table class="table">
     <thead>
         <tr>
@@ -12,7 +13,7 @@
               <td><%= tipomascota.descripcion %></td>
               <td><%= link_to 'Mostrar', tipo_mascota_url(tipomascota),class: 'btn btn-success ' %> </td>
               <td><%= link_to 'Editar',editar_tipo_mascota_path(tipomascota),class: 'btn btn-warning ' %></td>
-              <td><%= link_to "Eliminar", tipo_mascota_path(tipomascota) ,class: 'btn btn-danger ',  method: :delete, data: {confirm: 'Esta seguro?'} %>
+              <td><%#= link_to "Eliminar", tipo_mascota_path(tipomascota) ,class: 'btn btn-danger ',  method: :delete, data: {confirm: 'Esta seguro?'} %>
               </td>
           </tr>
         <% end %>

@@ -1,0 +1,23 @@
+<%= form_for @tipomascota, url: tipo_mascotas_path, html: {method: :post} do |f| %>
+  <% if @tipomascota.errors.any? %>
+    <div class="alert alert-danger alert-dismissable" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+        <h4><%= pluralize(@tipomascota.errors.count,"error") %> prohibido guardar este tipo de mascota:</h4>
+
+        <ul>
+            <% @tipomascota.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+        </ul>
+
+      <% end %>
+
+
+      <%= f.label :tipo_mascota %> </br>
+      <%= f.text_field :descripcion %><br><br>
+
+
+      <%= f.submit %>
+
+
+    <% end %>

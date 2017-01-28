@@ -19,11 +19,12 @@
     <br><br>
     <%= f.label :fecha_nacimiento %>
     <br>
-    <%= f.text_field :fecha_nac %>
+    <%= f.date_field :fecha_nac%>
     <br><br>
     <%= f.label :tipo_mascota_id %>
     <br>
-    <%= f.text_field :tipo_mascota_id %>
+    <%= f.select('tipo_mascota_id', TipoMascota.all.collect { |c| [c.descripcion, c.id] }, {include_blank: true},
+                 {class: 'chosen-select'}) %>
     <br><br>
     <%= f.label :dueno_id %><br>
     <%= f.select('dueno_id', Dueno.all.collect { |c| [c.nombre, c.id] }, {include_blank: true},
