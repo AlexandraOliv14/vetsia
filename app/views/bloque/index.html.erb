@@ -1,5 +1,6 @@
-<h1>Bloque#index</h1>
-<p>Find me in app/views/bloque/index.html.erb</p>
+<h1>Bloque</h1>
+<span class="tn btn-default btn-lg bt pull-right glyphicon glyphicon-plus"><%= link_to 'Crear Bloque',nuevo_bloque_url %></span>
+
 
 <table class="table">
     <thead>
@@ -11,7 +12,7 @@
         <% @bloques.each do |bloque| %>
           <tr>
               <td><%= bloque.descripcion %></td>
-              <td><%= link_to 'Mostrar', bloque_url(bloque),class: 'btn btn-success ' %> </td>
+              <td><%#= link_to 'Mostrar', bloque_url(bloque),class: 'btn btn-success ' %> </td>
               <td><%= link_to 'Editar',editar_bloque_path(bloque),class: 'btn btn-warning' %></td>
               <td><%#= link_to "Eliminar", bloques_path(bloque),class: 'btn btn-danger', method: :delete, data: {confirm: 'Esta seguro?'} %>
               </td>
@@ -20,4 +21,3 @@
     </tbody>
 </table>
 <%= will_paginate @bloques, renderer: BootstrapPagination::Rails %>
-

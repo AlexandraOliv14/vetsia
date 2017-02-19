@@ -1,16 +1,14 @@
-<h1>Horarios#index</h1>
-<p>Find me in app/views/horarios/index.html.erb</p>
+<h1>Horarios</h1>
 <table class="table table-striped">
     <thead>
         <tr>
-            <th><%Bloque%></th>
-            <th><%Dia%></th>
+            <th>Bloque</th>
+            <th>Dia</th>
         </tr>
     </thead>
     <tbody>
         <% @horarios.each do |horario| %>
           <tr>
-              <td><%= horario.bloque.descripcion %></td>
               <td><%= horario.dia.descripsion %></td>
               <td><%= link_to 'Mostrar', horario_url(horario),class: 'btn btn-success ' %> </td>
               <td><%= link_to 'Editar',horarios_editar_path(horario),class: 'btn btn-warning '  %></td>

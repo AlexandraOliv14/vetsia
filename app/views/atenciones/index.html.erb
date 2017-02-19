@@ -1,2 +1,29 @@
-<h1>index </h1>
-<p>Find me in app/views/atenciones/index.html.erb</p>
+<h1>atenciones</h1>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Mascota</th>
+            <th>Dueño</th>
+            <th>Fecha</th>
+            <th>Tipo de atencion</th>
+            <th>Medico</th>
+            <th>bloque de atencion</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @atenciones.each do |atencion| %>
+          <tr>
+              <td><%= atencion.mascota.nombre%></td>
+              <td><%= atencion.mascota.dueno.nombre %></td>
+              <td><%= atencion.fecha %></td>
+              <td><%= atencion.tipo_atencion.descripcion %></td>
+              <td><%= atencion.mh.medico.nombre %></td>
+              <td><%= atencion.mh.horario.bloque.descripcion %></td>
+              <td><%= link_to 'Mostrar', atencion_url(atencion),class: 'btn btn-success ' %> </td>
+              <td><%= link_to 'Editar',editar_atencion_path(atencion),class: 'btn btn-warning '  %></td>
+              <td><%= link_to'Eliminar',atenciones_path(atencion),class: 'btn btn-danger ' , method: :delete, data: {confirm: 'Esta seguro?'} %></td>
+          </tr>
+        <% end %>
+    </tbody>
+</table>
+<%= will_paginate @atenciones, renderer: BootstrapPagination::Rails %>

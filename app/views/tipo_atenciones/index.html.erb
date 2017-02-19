@@ -1,2 +1,21 @@
-<h1>TipoAtenciones#index</h1>
-<p>Find me in app/views/tipo_atenciones/index.html.erb</p>
+<h1>TipoAtenciones</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Descripcion</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @tipo_atenciones.each do |tipo_atencion| %>
+          <tr>
+              <td><%= tipo_atencion.descripcion.to_s %></td>
+              <td><%= link_to ' Mostrar', tipo_atencion_url(tipo_atencion),class: 'btn btn-success ' %> </td>
+              <td><%= link_to 'Editar',tipo_atencion_editar_path(tipo_atencion),class: 'btn btn-warning ' %></td>
+              <td><%= link_to "Eliminar", tipo_atenciones_path(tipo_atencion) ,class: 'btn btn-danger ',method: :delete, data: {confirm: 'Esta seguro?'}%>
+              </td>
+          </tr>
+        <% end %>
+    </tbody>
+</table>
+<%= will_paginate @tipo_atenciones, renderer: BootstrapPagination::Rails %>
