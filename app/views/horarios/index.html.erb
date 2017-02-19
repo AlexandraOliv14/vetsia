@@ -10,8 +10,8 @@
     <tbody>
         <% @horarios.each do |horario| %>
           <tr>
-              <td><%= horario.bloque_id %></td>
-              <td><%= horario.dia_id %></td>
+              <td><%= horario.bloque.descripcion %></td>
+              <td><%= horario.dia.descripsion %></td>
               <td><%= link_to 'Mostrar', horario_url(horario),class: 'btn btn-success ' %> </td>
               <td><%= link_to 'Editar',horarios_editar_path(horario),class: 'btn btn-warning '  %></td>
               <td><%= link_to'Eliminar',horario_path(horario),class: 'btn btn-danger ' , method: :delete, data: {confirm: 'Esta seguro?'} %></td>
